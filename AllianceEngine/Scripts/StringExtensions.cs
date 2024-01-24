@@ -1,11 +1,16 @@
-﻿using System.Collections.Generic;
-using System.Numerics;
+﻿using System.Text;
 
 namespace AllianceEngine
 {
     public static class StringExtensions
     {
-        public static string ToCapital(this string s) => s[0].ToString().ToUpper() + s[1..];
+        public static string ToCapital(this string s) => string.IsNullOrEmpty(s) 
+            ? s
+            : new StringBuilder(s.Length)
+                .Append(char.ToUpperInvariant(s[0]))
+                .Append(s[1..])
+                .ToString();
+        
         public static bool StartsWithOptimized(this string s, in string comparator)
         {
             if (comparator.Length > s.Length)

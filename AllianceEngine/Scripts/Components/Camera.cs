@@ -4,8 +4,7 @@ namespace AllianceEngine
 {
     public class Camera : Component
     {
-        public static Camera MainCamera { get => mainCamera; }
-        private static Camera mainCamera = null;
+        public static Camera MainCamera { get; private set; }
         
         public float FarPlaneDistance { get; set; } = 100.0f;
         public float NearPlaneDistance { get; set; } = 0.1f;
@@ -18,7 +17,7 @@ namespace AllianceEngine
 
         public static void SwitchMainCamera(Camera camera)
         {
-            mainCamera = camera;
+            MainCamera = camera;
         }
 
     }
