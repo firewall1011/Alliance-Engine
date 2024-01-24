@@ -5,14 +5,10 @@ namespace AllianceEngine
 {
     public static class Input
     {
-        public static IKeyboard Keyboard { get => keyboard; private set => keyboard = value; }
-        public static IMouse Mouse { get => mouse; private set => mouse = value; }
-        public static IInputContext InputContext { get => inputContext; private set => inputContext = value; }
-
-        private static IKeyboard keyboard;
-        private static IMouse mouse;
-        private static IInputContext inputContext;
-
+        public static IKeyboard Keyboard { get; private set; }
+        public static IMouse Mouse { get; private set; }
+        public static IInputContext InputContext { get; private set; }
+        
         public static void Initialize(IView window)
         {
             InputContext = window.CreateInput();
