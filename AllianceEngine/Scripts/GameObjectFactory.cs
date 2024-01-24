@@ -103,7 +103,7 @@ namespace AllianceEngine
                         
             GameObject campfire = new("campfire");
             campfire.AddComponent<Renderer>(ModelType.Campfire, shader);
-            campfire.AddComponent<Flame>(shader, new Vector3(1,0.3f,0), 1f, 0.8f, 1, 1, 0.1f);
+            campfire.AddComponent<Flame>(shader, new Vector3(1,0.3f,0), 0.8f, 1, 1, 0.1f);
             campfire.Transform.Position = new Vector3(25f, -0.27f, 11f);
             campfire.Transform.Rotation = new Vector3(0f, 0f, -6f);
             campfire.Transform.Scale = new Vector3(10f, 10f, 10f);
